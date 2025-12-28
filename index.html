@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imarifact | イメージをカタチに</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="loading">
+        <div class="logo-text">Imarifact</div>
+    </div>
+
+    <header id="header">
+        <div class="logo">Imarifact</div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#works-preview">Works</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content fade-in-up">
+            <h1>Imarifact</h1>
+            <p class="catchphrase">イメージをカタチに</p>
+            <p class="sub-text">Visuals / Design / Data Science</p>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <section id="news" class="section-padding">
+        <div class="container fade-in-up">
+            <h2 class="section-title">NEWS</h2>
+            <ul class="news-list">
+                <li>
+                    <span class="date">2025.12.27</span>
+                    <span class="category">Movie</span>
+                    <span class="title">玲乃@あいみる 様「月夜を喰らうまで」MV公開</span>
+                </li>
+                <li>
+                    <span class="date">2025.07.12</span>
+                    <span class="category">Info</span>
+                    <span class="title">Imarifact 創業</span>
+                </li>
+                <li>
+                    <span class="date">2025.06.01</span>
+                    <span class="category">Movie</span>
+                    <span class="title">スタイリンクス合同会社 PR映像担当</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding dark-bg">
+        <div class="container fade-in-up">
+            <h2 class="section-title">ABOUT</h2>
+            
+            <div class="about-grid">
+                <div class="profile-card">
+                    <h3>Creator</h3>
+                    <p class="name">青木 輝夜 <span class="en-name">Kaguya Aoki</span></p>
+                    <p class="bio">
+                        中学2年生から映像制作を開始。<br>
+                        MV、Edit、ライブ背景映像、アルバム収録曲MVを担当。<br>
+                        現在は、大学でプログラミング・統計・情報学などを学びながら、映像の仕事も継続。
+                    </p>
+                </div>
+                
+                <div class="company-info">
+                    <h3>Company Info</h3>
+                    <dl>
+                        <dt>屋号</dt>
+                        <dd>Imarifact</dd>
+                        <dt>所在地</dt>
+                        <dd>神奈川県横浜市神奈川区金港町5-14　クアドリフォリオ8階</dd>
+                        <dt>創業</dt>
+                        <dd>2025年7月12日</dd>
+                        <dt>事業内容</dt>
+                        <dd>映像制作、デザイン、データサイエンス、プログラミング etc.</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works-preview" class="section-padding">
+        <div class="container fade-in-up">
+            <h2 class="section-title">WORKS</h2>
+            <p class="section-desc">Movie / Design / Others</p>
+            
+            <div class="works-categories">
+                <div class="category-box">
+                    <h3>Movie</h3>
+                    <p>Music Video, PR Movie, etc.</p>
+                </div>
+                <div class="category-box">
+                    <h3>Design</h3>
+                    <p>Graphic, Web, UI/UX</p>
+                </div>
+                <div class="category-box">
+                    <h3>Others</h3>
+                    <p>Programming, Data Science</p>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <a href="works.html" class="btn-primary">View All Works & Movie List</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="request" class="section-padding dark-bg">
+        <div class="container fade-in-up">
+            <h2 class="section-title">REQUEST</h2>
+            <div class="request-content">
+                <p>映像制作、デザイン、その他技術的なご相談を承っております。<br>
+                ご予算や納期に合わせて柔軟に対応いたしますので、<br>
+                まずはContactよりお気軽にご相談ください。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container fade-in-up">
+            <h2 class="section-title">CONTACT</h2>
+            <p class="contact-desc">ご依頼・ご相談はこちらから</p>
+            
+            <form action="https://api.staticforms.xyz/submit" method="post" class="contact-form">
+                <input type="hidden" name="accessKey" value="sf_k082ajenlhd9gbkkheimfn6c">
+                <input type="hidden" name="redirectTo" value="https://imarifact.com/thanks.html">
+                <input type="text" name="honeypot" style="display:none">
+
+                <div class="form-group">
+                    <label>企業・団体名 / 活動名</label>
+                    <input type="text" name="Company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>担当者様 お名前</label>
+                    <input type="text" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>ご連絡先 (メールアドレス)</label>
+                    <input type="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>ご用件</label>
+                    <select name="subject">
+                        <option value="映像制作の依頼">映像制作のご依頼</option>
+                        <option value="デザインの依頼">デザインのご依頼</option>
+                        <option value="その他">その他ご相談</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>ご相談内容</label>
+                    <textarea name="message" rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Imarifact Site. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

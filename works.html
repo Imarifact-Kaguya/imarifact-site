@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works | Imarifact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050508;
+            --text-color: #e0e0e0;
+            --accent-color: #00d4ff;
+            --accent-glow: rgba(0, 212, 255, 0.4);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --font-main: 'Zen Kaku Gothic New', sans-serif;
+            --font-head: 'Audiowide', cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(5, 5, 8, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        header .logo {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu li a {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-color);
+            transition: 0.3s;
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        .works-hero {
+            height: 50vh;
+            background: url('images/白神殿_3.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .works-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .works-hero h1,
+        .works-hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .works-hero h1 {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            text-shadow: 0 0 15px var(--accent-glow);
+            margin-bottom: 10px;
+        }
+
+        .works-hero p {
+            color: var(--accent-color);
+            letter-spacing: 2px;
+        }
+
+        .section-padding {
+            padding: 100px 5%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .sub-title {
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+            font-size: 1.8rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .video-card {
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .video-card:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .play-text {
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-shadow: 0 0 20px var(--accent-glow);
+            letter-spacing: 2px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-info .date {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .video-info .title {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .no-video-card {
+            background: #111;
+            border: 1px solid #333;
+            cursor: default;
+        }
+
+        .no-video-card:hover {
+            transform: none;
+            border-color: #333;
+            box-shadow: none;
+        }
+
+        .no-video-placeholder {
+            padding-bottom: 56.25%;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            position: relative;
+        }
+
+        .no-video-placeholder p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.9rem;
+        }
+
+        .other-works-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .works-col h2 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .works-col {
+            text-align: left;
+        }
+
+        .coming-soon {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; text-shadow: 0 0 25px var(--accent-color); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .works-hero h1 { font-size: 2rem; }
+            .video-grid { grid-template-columns: 1fr; }
+            .other-works-container { grid-template-columns: 1fr; }
+            header { padding: 15px 20px; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="logo"><a href="index.html">Imarifact</a></div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="works-hero">
+        <h1>ALL WORKS</h1>
+        <p>Movie / Design / Others</p>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            
+            <h2 class="sub-title">Movie Works</h2>
+            <div class="video-grid">
+                
+                <a href="https://www.youtube.com/watch?v=kA41U4i6mac" target="_blank" class="video-card fade-in-up">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/kA41U4i6mac/maxresdefault.jpg" alt="玲乃@あいみる 様「月夜を喰らうまで」MV担当">
+                        <div class="video-overlay">
+                            <span class="play-text">YouTubeで見る</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.12.27</span>
+                        <p class="title">玲乃@あいみる 様「月夜を喰らうまで」MV担当</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=ekWWRNmo1To" target="_blank" class="video-card fade-in-up">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/ekWWRNmo1To/maxresdefault.jpg" alt="ぴお 様「かわいいだけじゃだめですか?」MV担当">
+                        <div class="video-overlay">
+                            <span class="play-text">YouTubeで見る</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.09.21</span>
+                        <p class="title">ぴお 様「かわいいだけじゃだめですか?」MV担当</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=sBcmqCJuRNk" target="_blank" class="video-card fade-in-up">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/sBcmqCJuRNk/maxresdefault.jpg" alt="ぽみ 様「クレイル」MV担当">
+                        <div class="video-overlay">
+                            <span class="play-text">YouTubeで見る</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.08.31</span>
+                        <p class="title">ぽみ 様「クレイル」MV担当</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=VoLstAaK5Hw" target="_blank" class="video-card fade-in-up">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/VoLstAaK5Hw/maxresdefault.jpg" alt="VocaDuo 2025 team Lovely Rabbits♡「きゅん恋命令っ!」MV担当">
+                        <div class="video-overlay">
+                            <span class="play-text">YouTubeで見る</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.07.04</span>
+                        <p class="title">VocaDuo 2025 team Lovely Rabbits♡「きゅん恋命令っ!」MV担当</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=8DhXdc-ZSDo" target="_blank" class="video-card fade-in-up">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/8DhXdc-ZSDo/maxresdefault.jpg" alt="VocaDuo 2025 team Relent lily「Lily」MV担当">
+                        <div class="video-overlay">
+                            <span class="play-text">YouTubeで見る</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.07.01</span>
+                        <p class="title">VocaDuo 2025 team Relent lily「Lily」MV担当</p>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=cIWgkaBJ9_4" target="_blank" class="video-card fade-in-up">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/cIWgkaBJ9_4/maxresdefault.jpg" alt="玲乃@あいみる 様「イデア」MV担当">
+                        <div class="video-overlay">
+                            <span class="play-text">YouTubeで見る</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.06.29</span>
+                        <p class="title">玲乃@あいみる 様「イデア」MV担当</p>
+                    </div>
+                </a>
+
+                <div class="video-card no-video-card fade-in-up">
+                    <div class="no-video-placeholder">
+                        <p>No Video Link</p>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.06.01</span>
+                        <p class="title">スタイリンクス合同会社 PR映像</p>
+                    </div>
+                </div>
+
+                <a href="https://www.youtube.com/watch?v=VudphYwxQ10" target="_blank" class="video-card fade-in-up">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/VudphYwxQ10/maxresdefault.jpg" alt="鵜彩 様「ライラック」MV担当">
+                        <div class="video-overlay">
+                            <span class="play-text">YouTubeで見る</span>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="date">2025.05.27</span>
+                        <p class="title">鵜彩 様「ライラック」MV担当</p>
+                    </div>
+                </a>
+                
+            </div>
+
+            <div class="other-works-container fade-in-up">
+                <div class="works-col">
+                    <h2 class="sub-title">Design Works</h2>
+                    <p class="coming-soon">Coming Soon / 随時更新予定</p>
+                </div>
+                <div class="works-col">
+                    <h2 class="sub-title">Other Works</h2>
+                    <p class="coming-soon">Coming Soon / 随時更新予定</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Imarifact Site. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // フェードインアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
