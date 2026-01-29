@@ -111,7 +111,7 @@
             letter-spacing: 1px;
         }
 
-        /* --- 新設：Corporate専用カードスタイル --- */
+        /* --- Corporate List Style --- */
         .corporate-list {
             display: flex;
             flex-direction: column;
@@ -127,8 +127,6 @@
             justify-content: space-between;
             align-items: center;
             transition: 0.4s;
-            position: relative;
-            overflow: hidden;
         }
 
         .corp-card:hover {
@@ -138,10 +136,7 @@
             transform: translateX(5px);
         }
 
-        .corp-info {
-            flex: 1;
-        }
-
+        .corp-info { flex: 1; }
         .corp-date {
             display: block;
             font-size: 0.8rem;
@@ -149,12 +144,7 @@
             margin-bottom: 5px;
             font-family: var(--font-head);
         }
-
-        .corp-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #fff;
-        }
+        .corp-title { font-size: 1.1rem; font-weight: 500; color: #fff; }
 
         .corp-links {
             display: flex;
@@ -168,7 +158,6 @@
             border: 1px solid var(--accent-color);
             border-radius: 20px;
             color: var(--accent-color);
-            background: transparent;
             transition: 0.3s;
         }
 
@@ -178,7 +167,7 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* --- 既存：Videoグリッドスタイル --- */
+        /* --- Individual Video Grid --- */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -227,7 +216,6 @@
             font-family: var(--font-head);
             font-size: 1rem;
             color: var(--accent-color);
-            text-shadow: 0 0 20px var(--accent-glow);
         }
 
         .video-info { padding: 15px; }
@@ -321,9 +309,7 @@
                     <a href="https://www.youtube.com/watch?v=kA41U4i6mac" target="_blank" class="video-card fade-in-up">
                         <div class="video-thumbnail">
                             <img src="https://img.youtube.com/vi/kA41U4i6mac/maxresdefault.jpg" alt="玲乃@あいみる 様「月夜を喰らうまで」">
-                            <div class="video-overlay">
-                                <span class="play-text">PLAY VIDEO</span>
-                            </div>
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
                         </div>
                         <div class="video-info">
                             <span class="date">2025.12.27</span>
@@ -341,8 +327,95 @@
                             <p class="title">ぴお 様「かわいいだけじゃだめですか?」MV担当</p>
                         </div>
                     </a>
-                    
-                    </div>
+
+                    <a href="https://www.youtube.com/watch?v=sBcmqCJuRNk" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/sBcmqCJuRNk/maxresdefault.jpg" alt="ぽめ 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.08.31</span>
+                            <p class="title">ぽめ 様「クレイル」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=VoLstAaK5Hw" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/VoLstAaK5Hw/maxresdefault.jpg" alt="Lovely Rabbits♡">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.07.04</span>
+                            <p class="title">VocaDuo 2025 team Lovely Rabbits♡「きゅん恋命令っ!」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=8DhXdc-ZSDo" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/8DhXdc-ZSDo/maxresdefault.jpg" alt="Relent lily">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.07.01</span>
+                            <p class="title">VocaDuo 2025 team Relent lily「Lily」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=cIWgkaBJ9_4" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/cIWgkaBJ9_4/maxresdefault.jpg" alt="玲乃@あいみる 様 イデア">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.06.29</span>
+                            <p class="title">玲乃@あいみる 様「イデア」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=VudphYwxQ10" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/VudphYwxQ10/maxresdefault.jpg" alt="鵜彩 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.05.27</span>
+                            <p class="title">鵜彩 様「ライラック」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=yF9xL2cIfW0" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/yF9xL2cIfW0/maxresdefault.jpg" alt="氷雨ゆるん 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2024.07.31</span>
+                            <p class="title">氷雨ゆるん 様 「snooze」cover MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=5KAwOp4kxeY" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/5KAwOp4kxeY/maxresdefault.jpg" alt="疾瀬">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2023.07.11</span>
+                            <p class="title">VocaDuo 2023 team 疾瀬「夜の海に咲いたあの日の花」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=daZwKYfc19Y" target="_blank" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/daZwKYfc19Y/maxresdefault.jpg" alt="はりま 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2021.12.28</span>
+                            <p class="title">はりま@STPRBOYS 様 「GURU」cover MV担当</p>
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div class="other-works-container fade-in-up">
