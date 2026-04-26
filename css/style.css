@@ -221,6 +221,51 @@ dt {
     color: #aaa;
 }
 
+/* --- Awards & Activities --- */
+.awards-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    margin-top: 40px; /* 上のグリッドとの余白 */
+}
+
+.awards-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-family: var(--font-head);
+    font-size: 1.3rem; /* 他のh3とサイズを統一 */
+}
+
+.awards-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.awards-list li {
+    padding: 12px 15px;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent-color);
+    margin-bottom: 12px;
+    background: rgba(0, 212, 255, 0.03); /* うっすらとしたアクセントカラー背景 */
+    border-radius: 4px;
+    line-height: 1.6;
+    transition: 0.3s ease;
+}
+
+.awards-list li:hover {
+    background: rgba(0, 212, 255, 0.08); /* ホバーで少し明るくするギミック */
+    transform: translateX(5px); /* ホバーで右に少しスライドするギミック */
+}
+
+.awards-list li strong {
+    color: #fff; /* 大事なコンテスト名を白で強調 */
+    font-weight: 700;
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+}
+
 /* --- Works Preview & Categories --- */
 .works-categories {
     display: flex;
