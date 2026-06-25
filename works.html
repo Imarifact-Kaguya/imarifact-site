@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works | Imarifact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050508;
+            --text-color: #e0e0e0;
+            --accent-color: #00d4ff;
+            --accent-glow: rgba(0, 212, 255, 0.4);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --font-main: 'Zen Kaku Gothic New', sans-serif;
+            --font-head: 'Audiowide', cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(5, 5, 8, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        header .logo {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .works-hero {
+            height: 50vh;
+            background: url('images/白神殿_3.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .works-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .works-hero h1, .works-hero p { position: relative; z-index: 2; }
+        .works-hero h1 { font-family: var(--font-head); font-size: 3rem; text-shadow: 0 0 15px var(--accent-glow); margin-bottom: 10px; }
+        .works-hero p { color: var(--accent-color); letter-spacing: 2px; }
+
+        .section-padding { padding: 80px 5%; }
+        .container { max-width: 1000px; margin: 0 auto; }
+
+        .works-section { margin-bottom: 80px; }
+        .sub-title {
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 30px;
+            padding-bottom: 5px;
+            font-size: 1.6rem;
+            font-family: var(--font-head);
+            letter-spacing: 1px;
+        }
+
+        /* --- Corporate List Style --- */
+        .corporate-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .corp-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 25px 30px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.4s;
+        }
+
+        .corp-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .corp-info { flex: 1; }
+        .corp-date {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            font-family: var(--font-head);
+        }
+        .corp-title { font-size: 1.1rem; font-weight: 500; color: #fff; }
+
+        .corp-links {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .sns-btn {
+            font-size: 0.75rem;
+            padding: 5px 12px;
+            border: 1px solid var(--accent-color);
+            border-radius: 20px;
+            color: var(--accent-color);
+            transition: 0.3s;
+        }
+
+        .sns-btn:hover {
+            background: var(--accent-color);
+            color: #000;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* --- Individual Video Grid --- */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .video-thumbnail img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: 0.3s;
+        }
+
+        .video-card:hover .video-overlay { opacity: 1; }
+
+        .play-text {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            color: var(--accent-color);
+        }
+
+        .video-info { padding: 15px; }
+        .video-info .date { font-size: 0.8rem; color: var(--accent-color); display: block; margin-bottom: 5px; }
+        .video-info .title { font-size: 0.9rem; line-height: 1.4; }
+
+        .coming-soon {
+            color: #666;
+            font-style: italic;
+            letter-spacing: 1px;
+            padding: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid #222;
+            margin-top: 50px;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .corp-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .corp-links { margin-left: 0; }
+            .works-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="logo"><a href="index.html">Imarifact</a></div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="works-hero">
+        <h1>ALL WORKS</h1>
+        <p>Movie / Design / Others</p>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            
+            <div class="works-section">
+                <h2 class="sub-title">Corporate Movie Works</h2>
+                <div class="corporate-list">
+
+                    <div class="corp-card fade-in-up">
+                        <div class="corp-info">
+                            <span class="corp-date">2025.12.24~現在</span>
+                            <p class="corp-title">バーチャルインフルエンサー「頑張る父さん」運営協力</p>
+                        </div>
+                        <div class="corp-links">
+                            <a href="https://www.youtube.com/@medamaoyaji_dance" target="_blank" rel="noopener noreferrer" class="sns-btn">YouTube</a>
+                            <a href="https://www.tiktok.com/@medamaoyaji_dance" target="_blank" rel="noopener noreferrer" class="sns-btn">TikTok</a>
+                            <a href="https://www.instagram.com/medamaoyaji_dance" target="_blank" rel="noopener noreferrer" class="sns-btn">Instagram</a>
+                        </div>
+                    </div>
+
+                    <div class="corp-card fade-in-up">
+                        <div class="corp-info">
+                            <span class="corp-date">2025.06.01</span>
+                            <p class="corp-title">スタイリンクス合同会社 様 PR映像</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="works-section">
+                <h2 class="sub-title">Individual Movie Works</h2>
+                <div class="video-grid">
+
+                    <a href="https://www.youtube.com/watch?v=TOQ-BJJDoXE" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/TOQ-BJJDoXE/maxresdefault.jpg" alt="玲乃 様「カスミソウ」">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2026.03.23</span>
+                            <p class="title">玲乃 様「カスミソウ」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=rQU4GMG9lNM" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/rQU4GMG9lNM/maxresdefault.jpg" alt="ぴお 様「わたしに花束」">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2026.03.23</span>
+                            <p class="title">ぴお 様「わたしに花束」MV担当</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=kA41U4i6mac" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/kA41U4i6mac/maxresdefault.jpg" alt="玲乃@あいみる 様「月夜を喰らうまで」">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.12.27</span>
+                            <p class="title">玲乃 様「月夜を喰らうまで」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=ekWWRNmo1To" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/ekWWRNmo1To/maxresdefault.jpg" alt="ぴお 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.09.21</span>
+                            <p class="title">ぴお 様「かわいいだけじゃだめですか?」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=sBcmqCJuRNk" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/sBcmqCJuRNk/maxresdefault.jpg" alt="ぽめ 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.08.31</span>
+                            <p class="title">ぽめ 様「クレイル」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=VoLstAaK5Hw" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/VoLstAaK5Hw/maxresdefault.jpg" alt="Lovely Rabbits♡">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.07.04</span>
+                            <p class="title">VocaDuo 2025 team Lovely Rabbits♡「きゅん恋命令っ!」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=8DhXdc-ZSDo" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/8DhXdc-ZSDo/maxresdefault.jpg" alt="Relent lily">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.07.01</span>
+                            <p class="title">VocaDuo 2025 team Relent lily「Lily」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=cIWgkaBJ9_4" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/cIWgkaBJ9_4/maxresdefault.jpg" alt="玲乃@あいみる 様 イデア">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.06.29</span>
+                            <p class="title">玲乃@あいみる 様「イデア」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=VudphYwxQ10" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/VudphYwxQ10/maxresdefault.jpg" alt="鵜彩 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.05.27</span>
+                            <p class="title">鵜彩 様「ライラック」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=9RhDOsCGhZ4" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/9RhDOsCGhZ4/maxresdefault.jpg" alt="七瀬ゆずき 様「ready steady」">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2025.12.27</span>
+                            <p class="title">七瀬ゆずき 様「ready steady」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=yF9xL2cIfW0" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/yF9xL2cIfW0/maxresdefault.jpg" alt="氷雨ゆるん 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2024.07.31</span>
+                            <p class="title">氷雨ゆるん 様 「snooze」cover MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=m_1Hjdx_-4I" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/m_1Hjdx_-4I/maxresdefault.jpg" alt="疾瀬">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2024.07.07</span>
+                            <p class="title">VocaDuo 2024 team Uminoie「流レ星のsign」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=5KAwOp4kxeY" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/5KAwOp4kxeY/maxresdefault.jpg" alt="疾瀬">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2023.07.11</span>
+                            <p class="title">VocaDuo 2023 team 疾瀬「夜の海に咲いたあの日の花」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=0QBZsKZSqQ4" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/0QBZsKZSqQ4/maxresdefault.jpg" alt="疾瀬">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2023.07.05</span>
+                            <p class="title">VocaDuo 2023 team もちもちテーブルゲーム「めにば」MV担当</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=daZwKYfc19Y" target="_blank" rel="noopener noreferrer" class="video-card fade-in-up">
+                        <div class="video-thumbnail">
+                            <img src="https://img.youtube.com/vi/daZwKYfc19Y/maxresdefault.jpg" alt="はりま 様">
+                            <div class="video-overlay"><span class="play-text">PLAY VIDEO</span></div>
+                        </div>
+                        <div class="video-info">
+                            <span class="date">2021.12.28</span>
+                            <p class="title">はりま@とぅるりぷ 様 「GURU」cover MV担当</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="works-section">
+                <h2 class="sub-title">Corporate Design Works</h2>
+                <p class="coming-soon">Coming Soon / 随時更新予定</p>
+            </div>
+
+            <div class="works-section">
+                <h2 class="sub-title">Individual Design Works</h2>
+                <p class="coming-soon">Coming Soon / 随時更新予定</p>
+            </div>
+
+            <div class="works-section">
+                <h2 class="sub-title">Corporate Other Works</h2>
+                <div class="corporate-list">
+                    <div class="corp-card fade-in-up">
+                        <div class="corp-info">
+                            <span class="corp-date">2026.06.25</span>
+                            <p class="corp-title">株式会社 丹青ヒューマネット 様 業務効率マクロ作成</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="works-section">
+                <h2 class="sub-title">Individual Other Works</h2>
+                <p class="coming-soon">Coming Soon / 随時更新予定</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Imarifact Site. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

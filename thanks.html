@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imarifact | Thank You!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <style>
+        /* thanks.html 専用のスタイル */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden; /* スクロールバーが出ないように */
+        }
+        .thanks-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('../images/白神殿_2.jpg') no-repeat center center/cover;
+            filter: brightness(0.6) blur(3px); /* 少し暗く、ぼかしを強く */
+            z-index: -1;
+            transform: scale(1.1); /* 若干拡大 */
+        }
+        .thanks-content {
+            background: rgba(0, 0, 0, 0.7); /* 暗いガラス風 */
+            border: 1px solid rgba(0, 212, 255, 0.3); /* シアンの枠線 */
+            border-radius: 10px;
+            padding: 50px 30px;
+            max-width: 600px;
+            margin: 20px;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+            z-index: 10;
+        }
+        .thanks-content h1 {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 5vw, 3.5rem); /* レスポンシブに対応したサイズ */
+            color: var(--accent-color);
+            text-shadow: 0 0 15px var(--accent-glow);
+            margin-bottom: 20px;
+        }
+        .thanks-content p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+        .home-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent-color);
+            color: var(--bg-color); /* 黒っぽい背景色に合わせた文字色 */
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+        .home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="thanks-bg"></div>
+    <div class="thanks-content">
+        <h1>送信完了しました！</h1>
+        <p>お問い合わせいただき、誠にありがとうございます。<br>
+           確認後、改めてご連絡させていただきます。</p>
+        <a href="index.html" class="home-button">トップページへ戻る</a>
+    </div>
+</body>
+</html>
